@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export function useCopyToClipboard() {
     const [copied, setCopied] = useState(false);
 
-    const copy = async (text) => {
+    const copy = useCallback(async (text) => {
         if (!text) return;
         let success = false;
 
@@ -36,7 +36,7 @@ export function useCopyToClipboard() {
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         }
-    };
+    }, []);
 
     return { copied, copy };
 }

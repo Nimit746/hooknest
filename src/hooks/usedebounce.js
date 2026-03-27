@@ -1,19 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 export function useDebounce(value, delay) {
     const [debounced, setDebounced] = useState(value);
+    const timeoutRef = useRef(null);
+
+    const cancel = useCallback(() => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
+    }, []);
 
     useEffect(() => {
-        let isMounted = true;
-        const timer = setTimeout(() => {
-            if (isMounted) setDebounced(value);
+        timeoutRef.current = setTimeout(() => {
+            setDebounced(value);
         }, delay);
 
-        return () => {
-            isMounted = false;
-            clearTimeout(timer);
-        };
-    }, [value, delay]);
+        return cancel;
+    }, [value, delay, cancel]);
 
-    return debounced;
+    return [debounced, cancel];
 }
