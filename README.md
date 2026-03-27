@@ -120,4 +120,4 @@ function App() {
 
 ## License
 
-MIT © Nimit Gupta
+[MIT](./LICENSE) © Nimit Gupta
