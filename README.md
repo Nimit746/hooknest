@@ -120,4 +120,4 @@ function App() {
 
 ## License
 
-[MIT](https://github.com/yourusername/hooknest/blob/main/LICENSE) © Nimit Gupta
+[MIT](https://github.com/nimit746/hooknest/blob/main/LICENSE) © Nimit Gupta

@@ -1,12 +1,24 @@
 import { useEffect } from "react";
 
-export function useOnClickOutside(ref, handler) {
+export function useOnClickOutside(refOrRefs, handler) {
     useEffect(() => {
-        const listener = (e) => {
-            if (!ref.current || ref.current.contains(e.target)) return;
-            handler();
+        const listener = (event) => {
+            const refs = Array.isArray(refOrRefs) ? refOrRefs : [refOrRefs];
+            const isOutside = refs.every((ref) => {
+                return !ref.current || !ref.current.contains(event.target);
+            });
+
+            if (isOutside) {
+                handler(event);
+            }
         };
-        document.addEventListener("mousedown", listener);
-        return () => document.removeEventListener("mousedown", listener);
-    }, [ref, handler]);
+
+        document.addEventListener("mousedown", listener, true);
+        document.addEventListener("touchstart", listener, true);
+
+        return () => {
+            document.removeEventListener("mousedown", listener, true);
+            document.removeEventListener("touchstart", listener, true);
+        };
+    }, [refOrRefs, handler]);
 }
