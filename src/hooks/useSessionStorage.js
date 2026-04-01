@@ -15,6 +15,7 @@ import { useState, useCallback } from "react";
  */
 export function useSessionStorage(key, initialValue) {
     const [value, setValue] = useState(() => {
+        if (typeof window === "undefined") return initialValue;
         try {
             const item = sessionStorage.getItem(key);
             return item ? JSON.parse(item) : initialValue;

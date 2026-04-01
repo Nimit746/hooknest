@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 export function useOnClickOutside(refOrRefs, handler) {
     useEffect(() => {
+        if (typeof document === "undefined") return;
+
         const listener = (event) => {
             const refs = Array.isArray(refOrRefs) ? refOrRefs : [refOrRefs];
             const isOutside = refs.every((ref) => {

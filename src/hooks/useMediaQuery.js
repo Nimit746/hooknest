@@ -18,6 +18,8 @@ export function useMediaQuery(query) {
     const [matches, setMatches] = useState(getMatches);
 
     useEffect(() => {
+        if (typeof window === "undefined") return;
+
         const mql = window.matchMedia(query);
         setMatches(mql.matches);
 

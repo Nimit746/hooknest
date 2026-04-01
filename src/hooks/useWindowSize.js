@@ -26,6 +26,7 @@ export function useWindowSize(delay = 150) {
     }, [delay]);
 
     useEffect(() => {
+        if (typeof window === "undefined") return;
         window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);

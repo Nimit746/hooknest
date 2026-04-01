@@ -5,6 +5,8 @@ export function useCopyToClipboard() {
 
     const copy = useCallback(async (text) => {
         if (!text) return;
+        if (typeof window === "undefined") return;
+
         let success = false;
 
         try {
