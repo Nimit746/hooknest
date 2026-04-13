@@ -1,16 +1,25 @@
 {
   "name": "hooknest",
-  "version": "1.2.1",
-  "description": "A collection of essential React hooks",
+  "version": "1.2.2",
+  "description": "A lightweight collection of essential React custom hooks — useDebounce, useLocalStorage, useToggle, useOnClickOutside, usePrevious, useCopyToClipboard",
   "keywords": [
-    "react",
-    "hooks",
-    "useDebounce"
+    "react", "hooks", "react-hooks", "custom-hooks",
+    "useDebounce", "useLocalStorage", "useToggle",
+    "useOnClickOutside", "usePrevious", "useCopyToClipboard",
+    "javascript", "frontend"
   ],
   "license": "MIT",
   "author": "Nimit Gupta",
   "type": "module",
   "main": "./src/index.js",
+  "homepage": "https://github.com/nimit726/hooknest#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimit726/hooknest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nimit726/hooknest/issues"
+  },
   "scripts": {
     "test": "node --test"
   },
@@ -25,6 +34,6 @@
     "LICENSE"
   ],
   "peerDependencies": {
-    "react": "^19.2.4"
+    "react": ">=17.0.0"
   }
 }
