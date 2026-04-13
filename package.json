@@ -1,6 +1,6 @@
 {
   "name": "hooknest",
-  "version": "1.2.2",
+  "version": "1.2.1",
   "description": "A lightweight collection of essential React custom hooks — useDebounce, useLocalStorage, useToggle, useOnClickOutside, usePrevious, useCopyToClipboard",
   "keywords": [
     "react", "hooks", "react-hooks", "custom-hooks",
