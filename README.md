@@ -3,7 +3,6 @@
 > A lightweight, zero-dependency collection of production-ready React custom hooks.
 
 [![npm version](https://img.shields.io/npm/v/hooknest?color=crimson&style=flat-square)](https://www.npmjs.com/package/hooknest)
-[![npm downloads](https://img.shields.io/npm/dm/hooknest?color=crimson&style=flat-square)](https://www.npmjs.com/package/hooknest)
 [![license](https://img.shields.io/npm/l/hooknest?color=crimson&style=flat-square)](./LICENSE)
 [![react peer](https://img.shields.io/npm/dependency-version/hooknest/peer/react?style=flat-square)](https://reactjs.org/)
 
@@ -24,10 +23,6 @@ Stop copy-pasting the same hooks across every project. **hooknest** gives you a 
 
 ```bash
 npm install hooknest
-```
-
-```bash
-yarn add hooknest
 ```
 
 ---
